@@ -1,10 +1,11 @@
 import React from "react";
 import "../App.css";
+import Arcade from "../assets/images/icon-arcade.svg"
 
 const Plancard = () => {
   return (
     <div>
-        <img src="src/assets/images/icon-arcade.svg" alt="arcade" />
+        <img src={Arcade} alt="arcade" />
       <div>
       </div>
       <div>
