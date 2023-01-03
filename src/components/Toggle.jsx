@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 
-const Toggle = () => {
-  const [isActive, setIsActive] = useState(false);
+const Toggle = ({isActive,setIsActive}) => {
+  // const [isActive, setIsActive] = useState(false);
   const toggleHandler = () => {
     setIsActive(!isActive);
   };
@@ -10,9 +10,9 @@ const Toggle = () => {
     <div className="flex justify-center items-center w-1/6">
       <div
         onClick={toggleHandler}
-        className={classNames("w-16 h-8 bg-blue-900 rounded-full relative border-none", {
-          "bg-green-900": isActive,
-        })}
+        className={classNames(
+          "w-16 h-8 bg-MarineBlue rounded-full relative border-none",
+        )}
       >
         <span
           className={classNames(
