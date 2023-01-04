@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { toggle } from "../store/slices/services";
 
-const Toggle = () => {
-  const [isActive, setIsActive] = useState(false);
+const Toggle = ({isActive,setIsActive}) => {
+  const dispatch=useDispatch()
   const toggleHandler = () => {
     setIsActive(!isActive);
+    dispatch(toggle())
   };
   return (
     <div className="flex justify-center items-center w-1/6">
       <div
         onClick={toggleHandler}
-        className={classNames("w-16 h-8 bg-blue-900 rounded-full relative border-none", {
-          "bg-green-900": isActive,
-        })}
+        className={classNames(
+          "w-16 h-8 bg-MarineBlue rounded-full relative border-none",
+        )}
       >
         <span
           className={classNames(

@@ -1,16 +1,15 @@
 import React from "react";
 import "../App.css";
-import Arcade from "../assets/images/icon-arcade.svg"
 
-const Plancard = () => {
+const Plancard = ({ Plan, Price, Image }) => {
   return (
-    <div>
-        <img src={Arcade} alt="arcade" />
+    <div className="flex justify-start items-start flex-col gap-10 w-36 border-[1px] border-PurplishBblue p-4 rounded cursor-pointer">
       <div>
+        <img src={Image} alt="image" />
       </div>
       <div>
-        <h1>Arcade</h1>
-        <p>$9/mo</p>
+        <h1 className="text-MarineBlue font-bold ">{Plan}</h1>
+        <p className="text-CoolGray font-ubuntu">&#36;{Price}/m</p>
       </div>
     </div>
   );
