@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMonthly } from "../store/slices/service";
 
 const Toggle = ({isActive,setIsActive}) => {
-  // const [isActive, setIsActive] = useState(false);
+  const dispatch=useDispatch()
+  // const store=useSelector(store=>store.service.value.isMonthly)
   const toggleHandler = () => {
     setIsActive(!isActive);
+    dispatch(toggleMonthly())
+
   };
   return (
     <div className="flex justify-center items-center w-1/6">
