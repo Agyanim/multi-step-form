@@ -6,6 +6,7 @@ import classNames from "classnames";
 import schema from "../utils/formValidation";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { date } from "yup/lib/locale";
 import { addPersonalInfo } from "../store/slices/personalIfoSlice";
 
 const Home = () => {
