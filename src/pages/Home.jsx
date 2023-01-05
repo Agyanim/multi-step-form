@@ -5,18 +5,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import classNames from "classnames";
 import schema from "../utils/formValidation";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { date } from "yup/lib/locale";
 import { addPersonalInfo } from "../store/slices/personalIfoSlice";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [personalInfo, setpersonalInfo] = useState({
-    name:"",
-    email_address:"",
-    phone_number:"" 
-  })
+  const store=useSelector(store=>store.personalInfo)
+  console.log(store);
+  const [personalInfo, setpersonalInfo] = useState(store)
 
   const changeHandler=(e)=>{
     const value=e.target.value

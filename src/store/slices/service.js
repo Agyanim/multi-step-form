@@ -8,34 +8,66 @@ const serviceSlice = createSlice({
   initialState: {
     value: {
       onlineService,
-      isMonthly: true,
+      isYearly: false,
     },
   },
   reducers: {
     toggleMonthly: (state) => {
-      state.value.isMonthly = !state.value.isMonthly;
+      state.value.isYearly = !state.value.isYearly;
+      let newUpdate = "";
+      if (state.value.isYearly) {
+        newUpdate = state.value.onlineService.map(
+          (service) =>
+            (service = {
+              id: service.id,
+              plan: service.plan,
+              image: service.image,
+              price: service.price * 12,
+            })
+        );
+      } else
+        newUpdate = state.value.onlineService.map(
+          (service) =>
+            (service = {
+              id: service.id,
+              plan: service.plan,
+              image: service.image,
+              price: service.price / 12,
+            })
+        );
+      state.value.onlineService = newUpdate;
     },
+
     updateService: (state, action) => {
-      const { id } = action.payload;
-      if (state.value.isMonthly == false) {
-        const onlineService = state.value.onlineService;
-        const updateService = onlineService.map((value) => value.id === +id)
-          ? (value = {
-              id: value.id,
-              plan: value.plan,
-              price: value.price + 12,
-              image: value.image,
+      const id = action.payload;
+      let onlineService = state.value.onlineService;
+
+      const updateService = onlineService.map((service) =>
+        service.id == id && state.value.isYearly == true
+          ? (service = {
+              id: service.id,
+              plan: service.plan,
+              price: service.price * 12,
+              image: service.image,
             })
           : {
-              id: value.id,
-              plan: value.plan,
-              price: value.price,
-              image: value.image,
-            };
-            onlineService = updateService;
+              id: service.id,
+              plan: service.plan,
+              price: service.price,
+              image: service.image,
+            }
+      );
+      state.value.onlineService = [...updateService];
+    },
+    updatePrice: (state) => {
+      if (isYearly) {
+        state.value.onlineService.forEach((service) =>
+          console.log(service.price)
+        );
       }
     },
   },
 });
-export const { toggleMonthly, updateService } = serviceSlice.actions;
+export const { toggleMonthly, updateService, updatePrice } =
+  serviceSlice.actions;
 export default serviceSlice.reducer;

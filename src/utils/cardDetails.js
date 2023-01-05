@@ -8,14 +8,12 @@ import Pro from "../assets/images/icon-pro.svg";
     plan: "Arcade",
     price: 9,
     image: { Arcade },
-    isMonthly:true
   },
   {
     id: 2,
     plan: "Advanced",
     price: 12,
     image: { Advanced },
-    isMonthly:true
 
   },
   {
@@ -23,7 +21,6 @@ import Pro from "../assets/images/icon-pro.svg";
     plan: "Pro",
     price: 15,
     image: { Pro },
-    isMonthly:true
 
   },
 ];

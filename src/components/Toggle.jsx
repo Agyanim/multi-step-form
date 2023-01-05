@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMonthly } from "../store/slices/service";
+import { toggleMonthly, updatePrice } from "../store/slices/service";
 
 const Toggle = ({isActive,setIsActive}) => {
   const dispatch=useDispatch()
