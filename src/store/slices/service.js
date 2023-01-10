@@ -9,6 +9,7 @@ const serviceSlice = createSlice({
     value: {
       onlineService,
       isYearly: false,
+      selectedService:"",
     },
   },
   reducers: {
@@ -38,36 +39,14 @@ const serviceSlice = createSlice({
       state.value.onlineService = newUpdate;
     },
 
-    updateService: (state, action) => {
+    getSelectedService: (state, action) => {
       const id = action.payload;
       let onlineService = state.value.onlineService;
 
-      const updateService = onlineService.map((service) =>
-        service.id == id && state.value.isYearly == true
-          ? (service = {
-              id: service.id,
-              plan: service.plan,
-              price: service.price * 12,
-              image: service.image,
-            })
-          : {
-              id: service.id,
-              plan: service.plan,
-              price: service.price,
-              image: service.image,
-            }
-      );
-      state.value.onlineService = [...updateService];
-    },
-    updatePrice: (state) => {
-      if (isYearly) {
-        state.value.onlineService.forEach((service) =>
-          console.log(service.price)
-        );
-      }
+      const findService = onlineService.find((service) =>service.id==id)
+      state.value.selectedService=findService
     },
   },
 });
-export const { toggleMonthly, updateService, updatePrice } =
-  serviceSlice.actions;
+export const { toggleMonthly, getSelectedService }=serviceSlice.actions;
 export default serviceSlice.reducer;

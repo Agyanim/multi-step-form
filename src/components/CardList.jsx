@@ -1,28 +1,82 @@
+import classNames from "classnames";
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMonthly, updateService } from "../store/slices/service";
-import cardDetail from "../utils/cardDetails";
+import { useNavigate } from "react-router-dom";
+import { updateAddOns } from "../store/slices/addOns";
+import { getSelectedService} from "../store/slices/service";
+import PrimaryButton, { SecondaryButton } from "./Buttons";
 import Plancard from "./Plancard";
+import Toggle from "./Toggle";
 
-const CardList = () => {
+const CardList = ({ sent }) => {
+  const isYearly = useSelector((store) => store.service.value.isYearly);
+  const dispatch=useDispatch()
+  const navigate = useNavigate();
+
   const cardRef = useRef();
-  const dispatch = useDispatch();
-  const store=useSelector(store=>store.service.value.onlineService)
+  const { onlineService } = useSelector((store) => store.service.value);
+  let id="";
   const selectHandler = (e) => {
-    const id = e.currentTarget.id;
-    // dispatch(updateService(id));
-    // alert(id);
+     id = e.currentTarget.id;
   };
+  const goBackHandler = () => {
+    navigate("/");
+  };
+ const submitHandler=(e)=>{
+  e.preventDefault()
+  dispatch(getSelectedService(id))
+  dispatch(updateAddOns())
+  dispatch? navigate("/addons") :""
+ }
 
-  const rederCard = store.map((detail) => {
+
+  const rederCard = onlineService.map((detail) => {
     const image = Object.values(detail.image);
     return (
       <div key={detail.id} ref={cardRef} onClick={selectHandler} id={detail.id}>
-        <Plancard Plan={detail.plan} Price={detail.price} Image={image[0]} />
+        <Plancard
+          Plan={detail.plan}
+          Price={detail.price}
+          Image={image[0]}
+          sent={sent}
+        />
       </div>
     );
   });
-  return <div className="flex gap-4">{rederCard}</div>;
+  return (
+    <div className="flex gap-4">
+      <form action="" onSubmit={submitHandler}>
+        <section className="flex gap-4">{rederCard}</section>
+        <div className="w-[100%] h-10  mt-5 ">
+          <section className="flex w-[100%] bg-LightGray/40 justify-center p-2 rounded h-[100%]">
+            <span
+              className={classNames("mr-2 text-MarineBlue font-bold", {
+                "text-CoolGray font-thin": isYearly,
+              })}
+            >
+              Monthly
+            </span>
+            <Toggle />
+            <span
+              className={classNames("ml-2 text-CoolGray", {
+                "font-bold text-[#02295A] ": isYearly,
+              })}
+            >
+              Year
+            </span>
+          </section>
+        </div>
+        <div className="relative  top-16">
+          <div>
+            <PrimaryButton />
+          </div>
+          <div className="">
+            <SecondaryButton />
+          </div>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default CardList;

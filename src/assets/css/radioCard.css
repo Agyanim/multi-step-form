@@ -1,0 +1,50 @@
+::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card{
+    @apply w-52 h-52 relative bg-slate-100
+}
+#card1{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    appearance: none;
+    border-radius: 10px;
+    
+}
+.card :checked{
+    border: 1px solid red;
+}
+.card1{
+    @apply absolute
+}
+
+input[type="radio"]:before{
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    background-color: aquamarine;
+    border-radius: 50%;
+    outline: none;
+    right: 20px;
+    top: 10px;
+}
+input[type="radio"]:after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color:transparent;
+    border-radius: 50%;
+    /* border: 1px solid blue; */
+    right: 23.8px; 
+    top: 13.2px; 
+    outline: none;
+}
+
+input[type="radio"]:checked:after{
+    background-color: blue;
+}

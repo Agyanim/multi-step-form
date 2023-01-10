@@ -4,7 +4,6 @@ const initialState = { name: "", email_address: "", phone_number: "" };
 const personalInfoSlice = createSlice({
   name: "personalInfo",
   initialState,
-
   reducers: {
     addPersonalInfo: (state, actions) => {
       state = { ...actions.payload };
