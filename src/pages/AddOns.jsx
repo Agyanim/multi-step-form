@@ -1,19 +1,7 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import AddOnsCardList from "../components/AddOnsCardList";
-import { getIsYealy, updateAddOns } from "../store/slices/addOns";
-
-
 
 const AddOns = () => {
-  const dispatch = useDispatch();
-
-  const isYearly = useSelector((store) => store.addOns.value.isYearly);
-  useEffect(() => {
-    // dispatch(getIsYealy(isYearly))
-    // dispatch(updateAddOns());
-  }, []);
-
   return (
     <div className="w-[50vw]">
       <header className="mt-8 ml-28 mb-4">

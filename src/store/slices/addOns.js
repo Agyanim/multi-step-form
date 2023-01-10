@@ -14,8 +14,6 @@ const addOnSlice = createSlice({
   reducers: {
     getIsYealy: (state) => {
       state.value.isYearly = !state.value.isYearly;
-    },
-    updateAddOns: (state) => {
       let { addOnServices, searchResult,isYearly,  } = state.value;
       let newUpdate = "";
       if (isYearly) {
@@ -42,7 +40,7 @@ const addOnSlice = createSlice({
       state.value.addOnServices =newUpdate;
       console.log(newUpdate);
     },
-  },
+    },
 });
-export const { updateAddOns, getIsYealy } = addOnSlice.actions;
+export const { getIsYealy } = addOnSlice.actions;
 export default addOnSlice.reducer;

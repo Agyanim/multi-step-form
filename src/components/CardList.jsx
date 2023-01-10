@@ -2,7 +2,6 @@ import classNames from "classnames";
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { updateAddOns } from "../store/slices/addOns";
 import { getSelectedService} from "../store/slices/service";
 import PrimaryButton, { SecondaryButton } from "./Buttons";
 import Plancard from "./Plancard";
@@ -25,7 +24,6 @@ const CardList = ({ sent }) => {
  const submitHandler=(e)=>{
   e.preventDefault()
   dispatch(getSelectedService(id))
-  dispatch(updateAddOns())
   dispatch? navigate("/addons") :""
  }
 
