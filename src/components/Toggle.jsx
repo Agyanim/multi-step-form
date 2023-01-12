@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMonthly, updatePrice } from "../store/slices/service";
+import { toggleMonthly } from "../store/slices/service";
+import { getIsYealy } from "../store/slices/addOns";
 
-const Toggle = ({isActive,setIsActive}) => {
+const Toggle = () => {
   const dispatch=useDispatch()
-  // const store=useSelector(store=>store.service.value.isMonthly)
+  const isYearly=useSelector(store=>store.service.value.isYearly)
   const toggleHandler = () => {
-    setIsActive(!isActive);
     dispatch(toggleMonthly())
+    dispatch(getIsYealy(isYearly))
 
   };
   return (
@@ -22,7 +23,7 @@ const Toggle = ({isActive,setIsActive}) => {
         <span
           className={classNames(
             "w-8 h-8 bg-white absolute rounded-full tranform duration-200 ease-out scale-[70%]",
-            { " translate-x-8 ": isActive }
+            { " translate-x-8 ": isYearly }
           )}
         />
       </div>

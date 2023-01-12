@@ -10,7 +10,7 @@ const AddOnsCard = ({Service,Package,Cost,id}) => {
                 <p className='text-CoolGray'>{Package}</p>
             </div>
         </section>
-        <p className="text-PurplishBblue">{Cost}</p>
+        <p className="text-PurplishBblue">+${Cost}yr</p>
     </div>
   )
 }
