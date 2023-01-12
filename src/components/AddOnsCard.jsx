@@ -1,6 +1,8 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const AddOnsCard = ({Service,Package,Cost,id}) => {
+  const isYearly=useSelector(store=>store.addOns.value.isYearly)
   return (
     <div className='flex justify-between items-center border-[1px] border-PurplishBblue w-[30vw] p-4 rounded-md cursor-pointer text-sm font-ubuntu'>
         <section className='flex justify-center items-center gap-4'>
@@ -10,7 +12,7 @@ const AddOnsCard = ({Service,Package,Cost,id}) => {
                 <p className='text-CoolGray'>{Package}</p>
             </div>
         </section>
-        <p className="text-PurplishBblue">+${Cost}yr</p>
+        <p className="text-PurplishBblue">+${Cost} {isYearly?"/yr":"/m"}</p>
     </div>
   )
 }

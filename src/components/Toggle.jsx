@@ -9,7 +9,7 @@ const Toggle = () => {
   const isYearly=useSelector(store=>store.service.value.isYearly)
   const toggleHandler = () => {
     dispatch(toggleMonthly())
-    dispatch(getIsYealy(isYearly))
+    dispatch(getIsYealy())
 
   };
   return (

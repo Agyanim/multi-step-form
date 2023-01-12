@@ -18,5 +18,5 @@ const keySlice = createSlice({
   },
 });
 
-export const { setSelectPlanId, setAddOnId } = action.reducers;
+export const { setSelectPlanId, setAddOnId } = keySlice.actions;
 export default keySlice.reducer;

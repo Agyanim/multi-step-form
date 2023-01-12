@@ -1,16 +1,16 @@
 import React from "react";
 import AddOnsCard from "./AddOnsCard";
-import addOnsDetails from "../utils/addOnsDetail";
 import PrimaryButton, { SecondaryButton } from "./Buttons";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const AddOnsCardList = () => {
   const navigate = useNavigate();
-  const addOnsServices=useSelector(state=>state.addOns.value)
-console.log(addOnsServices);
+  const addOnsServices = useSelector(
+    (state) => state.addOns.value.addOnServices
+  );
   const submitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // navigate("/summary");
   };
   const goBackHandler = () => {
@@ -21,7 +21,7 @@ console.log(addOnsServices);
     const id = e.currentTarget.id;
     alert(id);
   };
-  const renderCard = addOnsDetails.map((card) => {
+  const renderCard = addOnsServices.map((card) => {
     return (
       <div key={card.id}>
         <AddOnsCard
