@@ -9,11 +9,11 @@ const NavCard = ({ Id, Step, Link ,Path}) => {
       </div>
       <div>
         <h1 className="text-LightGray">{Step}</h1>
-        <NavLink  to={Path} className="text-white font-bold">{Link}
+        <NavLink  to={Path} className="text-white font-bold" >{Link}
         </NavLink>
       </div>
     </div>
   );
-};
+};3
 
 export default NavCard;

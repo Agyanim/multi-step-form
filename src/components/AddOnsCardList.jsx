@@ -29,6 +29,7 @@ const AddOnsCardList = () => {
           Package={card.package}
           Cost={card.cost}
           id={card.id}
+          Addon={card}
         />
       </div>
     );
