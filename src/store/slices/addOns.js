@@ -7,7 +7,7 @@ const addOnSlice = createSlice({
   initialState: {
     value: {
       addOnServices,
-      searchResult: "",
+      searchResult: [],
       isYearly: false,
     },
   },

@@ -41,7 +41,7 @@ const AddOnsCardList = () => {
           <div>
             <PrimaryButton />
           </div>
-          <div className="" onClick={goBackHandler}>
+          <div onClick={goBackHandler}>
             <SecondaryButton />
           </div>
         </section>
