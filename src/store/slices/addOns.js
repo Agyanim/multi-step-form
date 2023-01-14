@@ -7,7 +7,7 @@ const addOnSlice = createSlice({
   initialState: {
     value: {
       addOnServices,
-      searchResult: [],
+      searchResult: '',
       isYearly: false,
     },
   },
@@ -38,9 +38,13 @@ const addOnSlice = createSlice({
         );
       }
       state.value.addOnServices =newUpdate;
-      console.log(newUpdate);
     },
+
+    selectedAddOns:(state, action)=>{
+      state.value.searchResult=''
+      state.value.searchResult=(action.payload)
+    }
     },
 });
-export const { getIsYealy } = addOnSlice.actions;
+export const { getIsYealy,selectedAddOns } = addOnSlice.actions;
 export default addOnSlice.reducer;

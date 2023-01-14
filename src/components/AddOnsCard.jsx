@@ -1,43 +1,21 @@
 import React, { useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-const AddOnsCard = ({ Service, Package, Cost, id,Addon }) => {
+const AddOnsCard = ({ Service, Package, Cost, id, Addon }) => {
   const isYearly = useSelector((store) => store.addOns.value.isYearly);
-  const checkRef = useRef();
-  const addOnService = useSelector((store) => store.addOns.value.addOnServices);
-  const [selectAddOns, setSelectAddOns] = useState([]);
-
-  const changeHandler = (e) => {
-    let selectAddOn = "";
-    const id = e.target.id;
-    console.log(id);
-    if (checkRef.current.checked == true) {
-      selectAddOn = addOnService.find((addOn) => addOn.id == id);
-
-      setSelectAddOns(([...selectAddOns,selectAddOn]));
-      console.log(selectAddOns);
-      
-    } 
-    
-    if (checkRef.current.checked==false){
-      selectAddOn = selectAddOns.filter((addOn) => addOn.id != id);
-      // setSelectAddOns([...selectAddOns, selectAddOn]);
-      // console.log(selectAddOn);
-    }
-    // console.log(selectAddOns);
-    // console.log(id);
-  };
+  
   return (
-    <label htmlFor={id} className="flex justify-between items-center border-[1px] border-PurplishBblue w-[30vw] p-4 rounded-md cursor-pointer text-sm font-ubuntu">
+    <label
+      htmlFor={id}
+      className="flex justify-between items-center border-[1px] border-PurplishBblue w-[30vw] p-4 rounded-md cursor-pointer text-sm font-ubuntu"
+    >
       <section className="flex justify-center items-center gap-4">
         <input
           id={id}
-          ref={checkRef}
           className="text-red-400"
           type="checkbox"
-          name="select-add-ons"
+          name={Service}
           value={id}
-          onChange={changeHandler}
         />
         <div className="">
           <h1 className="text-MarineBlue font-bold">{Service}</h1>
