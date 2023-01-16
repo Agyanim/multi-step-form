@@ -18,6 +18,7 @@ const Plancard = ({ Plan, Price, Image }) => {
           type="radio"
           name="selectAddOns"
           value={Price}
+          required
         />
         <section className=" flex flex-col gap-10 m-4">
           <div>

@@ -23,8 +23,8 @@ const CardList = ({ sent }) => {
   };
  const submitHandler=(e)=>{
   e.preventDefault()
-  dispatch(getSelectedService(id))
-  dispatch? navigate("/addons") :""
+  dispatch(getSelectedService(+id) );
+   navigate("/addons")
  }
 
 
@@ -68,7 +68,7 @@ const CardList = ({ sent }) => {
           <div>
             <PrimaryButton />
           </div>
-          <div className="">
+          <div className="" onClick={goBackHandler}>
             <SecondaryButton />
           </div>
         </div>
