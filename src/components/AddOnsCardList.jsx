@@ -3,7 +3,7 @@ import AddOnsCard from "./AddOnsCard";
 import PrimaryButton, { SecondaryButton } from "./Buttons";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import addOns, { selectedAddOns } from "../store/slices/addOns";
+import { selectedAddOns } from "../store/slices/addOns";
 
 const AddOnsCardList = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const AddOnsCardList = () => {
   );
 
   const dispatch = useDispatch();
-  const [selectAddOns, setSelectAddOns] = useState([]);
+  // const [selectAddOns, setSelectAddOns] = useState([]);
   const [OnlineService, setOnlineService] = useState([]);
   const [largerStorage, setlargerStorage] = useState([]);
   const [customizableProfile, setcustomizableProfile] = useState([]);
@@ -52,13 +52,13 @@ const AddOnsCardList = () => {
     e.preventDefault();
     addItem = [];
     if (OnlineService.length > 0) {
-      addItem.push(OnlineService);
+      addItem.push(OnlineService[0]);
     }
     if (largerStorage.length > 0) {
-      addItem.push(largerStorage);
+      addItem.push(largerStorage[0]);
     }
     if (customizableProfile.length > 0) {
-      addItem.push(customizableProfile);
+      addItem.push(customizableProfile[0]);
     }
 
     dispatch(selectedAddOns(addItem))
