@@ -1,13 +1,14 @@
-import React from 'react'
-// import RadioCard from '../components/radioCard'
+import React from "react";
+import { useSelector } from "react-redux";
 
 const Summary = () => {
-  return (
-    <div className='w-[50vw]'>
-      {/* <RadioCard/> */}
+  const selectedService = useSelector(
+    (store) => store.service.value.selectedService
+  );
+  const selectedAddOns = useSelector(
+    (store) => store.addOns.value.searchResult
+  );
+  return <div className="w-[50vw]"></div>;
+};
 
-      </div>
-  )
-}
-
-export default Summary
+export default Summary;

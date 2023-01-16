@@ -9,7 +9,7 @@ const serviceSlice = createSlice({
     value: {
       onlineService,
       isYearly: false,
-      selectedService:"",
+      selectedService:{},
     },
   },
   reducers: {
