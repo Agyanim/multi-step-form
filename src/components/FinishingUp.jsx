@@ -15,9 +15,13 @@ const FinishingUp = () => {
     );
     selectedService ? price = selectedService.price : price;
     const totalCost = sumOfSlectedAddOns + price;
-    console.log(totalCost);
+    let payable=0
+    if(!totalCost){
+      payable=0
+    }
+    else payable=totalCost
   
-    const renderSelectedAddOns=selectedAddOns.map(value=>{
+    const renderSelectedAddOns=selectedAddOns?.map(value=>{
        return(
         <ul key={value.id}>
           <li className='flex justify-between items-center mb-3 text-CoolGray'> {value.service} <span className='text-MarineBlue'>${value.cost}{isYearly? "/yr": "/mo"}</span> </li>
@@ -35,7 +39,7 @@ const FinishingUp = () => {
           {renderSelectedAddOns}
       </ul>
       <div>
-        <h1 className='flex justify-between mx-16 mt-6 text-CoolGray '>Total{isYearly? " (Per year)": "( per month)"} <span className='text-PurplishBblue font-bold text-lg'>+${totalCost}{isYearly? "/yr": "/mo"}</span></h1>
+        <h1 className='flex justify-between mx-16 mt-6 text-CoolGray '>Total{isYearly? " (Per year)": "( per month)"} <span className='text-PurplishBblue font-bold text-lg'>+${payable}{isYearly? "/yr": "/mo"}</span></h1>
       </div>
     </div>
   )

@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    padding: 0 10px;
+    box-shadow: 2px 2px 5px blue ;
+    line-height: 20px;
+    overflow:hidden;
+    max-height: 0;
+}
+.wrapper input[type="radio"]:checked +label +.content{
+max-height: 600px;
+}

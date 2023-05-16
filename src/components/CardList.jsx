@@ -16,7 +16,7 @@ const CardList = ({ sent }) => {
   const { onlineService } = useSelector((store) => store.service.value);
   let id="";
   const selectHandler = (e) => {
-     id = e.currentTarget.id;
+     id = e.target.id;
   };
   const goBackHandler = () => {
     navigate("/");

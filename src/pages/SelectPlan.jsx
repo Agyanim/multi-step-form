@@ -9,7 +9,7 @@ import Toggle from "../components/Toggle";
 
 const SelectPlan = () => {
   const sent = (price) => {
-    console.log(price);
+    // console.log(price);
   };
   const submitHandler = (e) => {
     e.preventDefault();

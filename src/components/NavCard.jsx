@@ -1,32 +1,36 @@
-import React, { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import SelectPlan from "../pages/SelectPlan";
+import React, { useEffect, useState } from "react";
+import {useNavigate } from "react-router-dom";
+// import SelectPlan from "../pages/SelectPlan";
 import navDetails from "../utils/navDetails";
 
 const NavCard = () => {
   const navigate = useNavigate();
-  const [selector, setSelector] = useState();
+  const [selectorId, setSelectorId] = useState(1);
   const selectorDetails = navDetails;
 
-  const getId = (e) => {
-    const id = e.target.id;
-    const newId = Number(id);
-    setSelector(newId);
-    if (selector === 1) {
+  const navigationHandler=()=>{
+    if (selectorId === 1) {
       navigate("/");
     }
 
-    if (selector === 2) {
+    if (selectorId === 2) {
       navigate(`/${selectorDetails[1].path}/`);
     }
-    if (selector === 3) {
+    if (selectorId === 3) {
       navigate(`/${selectorDetails[2].path}/`);
     }
-    if (selector === 4) {
+    if (selectorId === 4) {
       navigate(`/${selectorDetails[3].path}/`);
     }
+
+  }
+  const getId = (e) => {
+    const { id } = e.target;
+    setSelectorId(+id);
   };
-  console.log(selector);
+  useEffect(() => {
+    navigationHandler()
+  }, [selectorId]);
 
   return (
     <section className="flex flex-col gap-4 mt-5 ml-5">
@@ -34,7 +38,7 @@ const NavCard = () => {
         <label htmlFor={selectorDetails[0].id} className="flex">
           <span
             className={
-              selector === 1
+              selectorId === 1
                 ? "numbers  border-none"
                 : " numbers bg-transparent"
             }
@@ -57,7 +61,7 @@ const NavCard = () => {
         <label htmlFor={selectorDetails[1].id} className="flex">
           <span
             className={
-              selector === 2 ? "numbers border-none" : " numbers bg-transparent"
+              selectorId === 2 ? "numbers border-none" : " numbers bg-transparent"
             }
           >
             {selectorDetails[1].id}
@@ -78,7 +82,7 @@ const NavCard = () => {
         <label htmlFor={selectorDetails[2].id} className="flex">
           <span
             className={
-              selector === 3 ? "numbers border-none" : " numbers bg-transparent"
+              selectorId === 3 ? "numbers border-none" : " numbers bg-transparent"
             }
           >
             {selectorDetails[2].id}
@@ -99,7 +103,7 @@ const NavCard = () => {
         <label htmlFor={selectorDetails[3].id} className="flex">
           <span
             className={
-              selector === 4 ? "numbers border-none" : " numbers bg-transparent"
+              selectorId === 4 ? "numbers border-none" : " numbers bg-transparent"
             }
           >
             {selectorDetails[3].id}
