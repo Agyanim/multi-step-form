@@ -13,7 +13,7 @@ const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const store=useSelector(store=>store.personalInfo)
-  console.log(store);
+  // console.log(store);
   const [personalInfo, setpersonalInfo] = useState(store)
 
   const changeHandler=(e)=>{

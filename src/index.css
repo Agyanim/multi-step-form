@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="radio"]{
+    appearance: none;
+
+}
+input[type="radio"]:checked>label{
+background-color: aqua;
+}
+@layer base{
+
+.numbers{
+    @apply rounded-full text-white border-2 border-white w-8 h-8 flex justify-center items-center bg-cyan-300 transform duration-200
+         
+}
+
+.link{
+@apply text-white font-bold
+}
+.step{
+    @apply  text-white/50 
+}
+}
