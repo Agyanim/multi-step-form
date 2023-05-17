@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "../App.css";
 
-const Plancard = ({ Plan, Price, Image }) => {
+const Plancard = ({ Plan, Price, Image,id }) => {
   const { isYearly } = useSelector((store) => store.service.value);
 
   return (
@@ -19,6 +19,7 @@ const Plancard = ({ Plan, Price, Image }) => {
           name="selectAddOns"
           value={Price}
           required
+          id={id}
         />
         <section className=" flex flex-col gap-10 m-4">
           <div>

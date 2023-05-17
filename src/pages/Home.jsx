@@ -6,14 +6,13 @@ import classNames from "classnames";
 import schema from "../utils/formValidation";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { date } from "yup/lib/locale";
 import { addPersonalInfo } from "../store/slices/personalIfoSlice";
+import { setSelector } from "../store/slices/service";
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const store=useSelector(store=>store.personalInfo)
-  // console.log(store);
   const [personalInfo, setpersonalInfo] = useState(store)
 
   const changeHandler=(e)=>{
@@ -42,6 +41,7 @@ const Home = () => {
       })
     );
     navigate("/selectplan");
+    dispatch(setSelector(12))
   };
 
   return (

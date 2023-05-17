@@ -4,6 +4,7 @@ import PrimaryButton, { SecondaryButton } from "./Buttons";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedAddOns } from "../store/slices/addOns";
+import { setSelector } from "../store/slices/service";
 
 const AddOnsCardList = () => {
   const navigate = useNavigate();
@@ -63,10 +64,12 @@ const AddOnsCardList = () => {
 
     dispatch(selectedAddOns(addItem))
     navigate("/summary");
+    dispatch(setSelector(14))
   };
 
   const goBackHandler = () => {
     navigate("/selectplan");
+    dispatch(setSelector(12))
   };
 
   const renderCard = addOnsServices.map((card) => {

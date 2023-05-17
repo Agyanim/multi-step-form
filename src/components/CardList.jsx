@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import React, { useRef } from "react";
+import React, { useRef  } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getSelectedService} from "../store/slices/service";
+import { getSelectedService, setSelector} from "../store/slices/service";
 import PrimaryButton, { SecondaryButton } from "./Buttons";
 import Plancard from "./Plancard";
 import Toggle from "./Toggle";
@@ -16,27 +16,30 @@ const CardList = ({ sent }) => {
   const { onlineService } = useSelector((store) => store.service.value);
   let id="";
   const selectHandler = (e) => {
-     id = e.target.id;
+    id=e.target.id
   };
   const goBackHandler = () => {
     navigate("/");
+    dispatch(setSelector(11))
   };
  const submitHandler=(e)=>{
   e.preventDefault()
   dispatch(getSelectedService(+id) );
    navigate("/addons")
+   dispatch(setSelector(13))
  }
 
 
   const rederCard = onlineService.map((detail) => {
     const image = Object.values(detail.image);
     return (
-      <div key={detail.id} ref={cardRef} onClick={selectHandler} id={detail.id}>
+      <div key={detail.id} ref={cardRef} onClick={selectHandler} >
         <Plancard
           Plan={detail.plan}
           Price={detail.price}
           Image={image[0]}
           sent={sent}
+          id={detail.id}
         />
       </div>
     );

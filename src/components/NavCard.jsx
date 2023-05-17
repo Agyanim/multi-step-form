@@ -1,142 +1,133 @@
 import React, { useEffect, useState } from "react";
 import {useNavigate } from "react-router-dom";
-// import SelectPlan from "../pages/SelectPlan";
 import navDetails from "../utils/navDetails";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelector } from "../store/slices/service";
 
 const NavCard = () => {
   const navigate = useNavigate();
-  const [selectorId, setSelectorId] = useState(1);
+  const selector=useSelector(store=>store.service.value.selector)
+  const dispatch=useDispatch()
+  const [selectorId, setSelectorId] = useState(11);
   const selectorDetails = navDetails;
+  console.log(selector);
 
   const navigationHandler=()=>{
-    if (selectorId === 1) {
+    if (selectorId === 11) {
       navigate("/");
     }
 
-    if (selectorId === 2) {
+    if (selector === 12) {
       navigate(`/${selectorDetails[1].path}/`);
     }
-    if (selectorId === 3) {
+    if (selector === 13) {
       navigate(`/${selectorDetails[2].path}/`);
     }
-    if (selectorId === 4) {
+    if (selector === 14) {
       navigate(`/${selectorDetails[3].path}/`);
     }
 
   }
   const getId = (e) => {
-    const { id } = e.target;
-    setSelectorId(+id);
+    const  id  = e.target.id;
+    dispatch(setSelector(+id));
   };
+
+
   useEffect(() => {
     navigationHandler()
-  }, [selectorId]);
+  }, [selector]);
 
   return (
     <section className="flex flex-col gap-4 mt-5 ml-5">
       <div>
-        <label htmlFor={selectorDetails[0].id} className="flex">
+        <label htmlFor="11" className="flex">
           <span
             className={
-              selectorId === 1
+              selector === 11
                 ? "numbers  border-none"
                 : " numbers bg-transparent"
             }
           >
             {selectorDetails[0].id}
           </span>
-          <div className="text-red-700 ml-[2rem] flex flex-col ">
+          <div className=" ml-[2rem] flex flex-col ">
             <span className="step"> {selectorDetails[0].step}</span>
             <span className="link"> {selectorDetails[0].link}</span>
           </div>
           <input
             type="radio"
             name="select"
-            id={selectorDetails[0].id}
+            id="11"
             onClick={getId}
           />
         </label>
       </div>
       <div>
-        <label htmlFor={selectorDetails[1].id} className="flex">
+        <label htmlFor="12" className="flex">
           <span
             className={
-              selectorId === 2 ? "numbers border-none" : " numbers bg-transparent"
+              selector === 12 ? "numbers border-none" : " numbers bg-transparent"
             }
           >
             {selectorDetails[1].id}
           </span>
-          <div className="text-red-700 ml-[2rem] flex flex-col ">
+          <div className=" ml-[2rem] flex flex-col ">
             <span className="step"> {selectorDetails[1].step}</span>
             <span className="link"> {selectorDetails[1].link}</span>
           </div>
           <input
             type="radio"
             name="select"
-            id={selectorDetails[1].id}
+            id="12"
             onClick={getId}
           />
         </label>
       </div>
       <div>
-        <label htmlFor={selectorDetails[2].id} className="flex">
+        <label htmlFor="13" className="flex">
           <span
             className={
-              selectorId === 3 ? "numbers border-none" : " numbers bg-transparent"
+              selector === 13 ? "numbers border-none" : " numbers bg-transparent"
             }
           >
             {selectorDetails[2].id}
           </span>
-          <div className="text-red-700 ml-[2rem] flex flex-col ">
+          <div className=" ml-[2rem] flex flex-col ">
             <span className="step"> {selectorDetails[2].step}</span>
             <span className="link"> {selectorDetails[2].link}</span>
           </div>
           <input
             type="radio"
             name="select"
-            id={selectorDetails[2].id}
+            id="13"
             onClick={getId}
           />
         </label>
       </div>
       <div>
-        <label htmlFor={selectorDetails[3].id} className="flex">
+        <label htmlFor="14" className="flex">
           <span
             className={
-              selectorId === 4 ? "numbers border-none" : " numbers bg-transparent"
+              selector === 14 ? "numbers border-none" : " numbers bg-transparent"
             }
           >
             {selectorDetails[3].id}
           </span>
-          <div className="text-red-700 ml-[2rem] flex flex-col ">
+          <div className=" ml-[2rem] flex flex-col ">
             <span className="step"> {selectorDetails[3].step}</span>
             <span className="link"> {selectorDetails[3].link}</span>
           </div>
           <input
             type="radio"
             name="select"
-            id={selectorDetails[3].id}
+            id="14"
             onClick={getId}
           />
         </label>
       </div>
     </section>
-    // <div  key={Id} className="flex gap-4 m-4 items-start justify-start text-sm group">
-    //   <label htmlFor={Id} className="rounded-full text-white border-2 border-white w-8 h-8 flex justify-center items-center group-checked:bg-cyan-300 transform duration-200">
-    //     {Id}
-    //     <input type="radio" name="select" id={Id} onClick={getId} />
-    //   </label>
-    //   <div>
-    //     <h1 className="text-LightGray">{Step}</h1>
-    //     <NavLink  to={Path} className="text-white font-bold" id={Id} >
-    //       {/* <span>hi</span> */}
-
-    //       {Link}
-    //     </NavLink>
-    //   </div>
-    // </div>
   );
 };
 
 export default NavCard;
-// { Id, Step, Link, Path }

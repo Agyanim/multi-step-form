@@ -1,12 +1,18 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-// import Accodion from '../components/Accodion'
 import PrimaryButton, { SecondaryButton } from '../components/Buttons'
 import FinishingUp from '../components/FinishingUp'
-// import RadioCard from '../components/radioCard'
+import { useDispatch } from 'react-redux'
+import { setSelector } from '../store/slices/service'
 
 const Summary = () => {
   const navigate =useNavigate()
+  const dispatch=useDispatch()
+
+  const goBackHandler=()=>{
+    navigate("/addons")
+    dispatch(setSelector(13))
+  }
   const submitHandler=(e)=>{
 e.preventDefault();
   }
@@ -24,12 +30,11 @@ e.preventDefault();
         <form action="#" onSubmit={submitHandler}>
 
         <FinishingUp/>
-        {/* <Accodion/> */}
         <div className="relative  top-5 w-[75%] m-auto">
           <div className='fixed right-[25vw] w-80 bottom-[22vh]'>
             <PrimaryButton />
           </div>
-          <div className=" fixed mt-8 w-40 bottom-[22vh]" onClick={()=>{navigate("/addons")}}>
+          <div className=" fixed mt-8 w-40 bottom-[22vh]" onClick={goBackHandler}>
             
             <SecondaryButton  />
           </div>
