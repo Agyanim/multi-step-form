@@ -12,7 +12,7 @@ background-color: aqua;
 @layer base{
 
 .numbers{
-    @apply rounded-full text-white border-2 border-white w-8 h-8 flex justify-center items-center bg-cyan-300 transform duration-200
+    @apply rounded-full text-white border-2 border-white w-8 h-8 flex justify-center items-center bg-green-200/80 font-bold transform duration-200
          
 }
 

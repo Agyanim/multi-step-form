@@ -4,6 +4,7 @@ import GlobalLayout from "./components/GlobalLayout";
 import SelectPlan from "./pages/SelectPlan";
 import AddOns from "./pages/AddOns";
 import Summary from "./pages/Summary";
+import Thanks from "./pages/Thanks";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="selectplan" element={<SelectPlan/>} />
         <Route path="addons" element={<AddOns/>} />
         <Route path="summary" element={<Summary/>} />
+        <Route path="thanks" element={<Thanks/>} />
       </Route>
     </Routes>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {useNavigate } from "react-router-dom";
 import navDetails from "../utils/navDetails";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,12 +8,11 @@ const NavCard = () => {
   const navigate = useNavigate();
   const selector=useSelector(store=>store.service.value.selector)
   const dispatch=useDispatch()
-  const [selectorId, setSelectorId] = useState(11);
   const selectorDetails = navDetails;
   console.log(selector);
 
   const navigationHandler=()=>{
-    if (selectorId === 11) {
+    if (selector === 11) {
       navigate("/");
     }
 
@@ -45,7 +44,7 @@ const NavCard = () => {
           <span
             className={
               selector === 11
-                ? "numbers  border-none"
+                ? "numbers  border-none text-black/70"
                 : " numbers bg-transparent"
             }
           >
@@ -67,7 +66,7 @@ const NavCard = () => {
         <label htmlFor="12" className="flex">
           <span
             className={
-              selector === 12 ? "numbers border-none" : " numbers bg-transparent"
+              selector === 12 ? "numbers border-none text-black/70" : " numbers bg-transparent"
             }
           >
             {selectorDetails[1].id}
@@ -88,7 +87,7 @@ const NavCard = () => {
         <label htmlFor="13" className="flex">
           <span
             className={
-              selector === 13 ? "numbers border-none" : " numbers bg-transparent"
+              selector === 13 ? "numbers border-none text-black/70" : " numbers bg-transparent"
             }
           >
             {selectorDetails[2].id}
@@ -109,7 +108,7 @@ const NavCard = () => {
         <label htmlFor="14" className="flex">
           <span
             className={
-              selector === 14 ? "numbers border-none" : " numbers bg-transparent"
+              selector === 14 ? "numbers border-none text-black/70" : " numbers bg-transparent"
             }
           >
             {selectorDetails[3].id}
