@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="w-[100%] h-[100%] rounded-md object-contain "
+        className="lg:flex lg:w-[100%] lg:h-[28.5rem] bg-PurplishBblue  rounded-md m-4 "
         style={{
           background: `url(${DesktopBgImage}) `,
           backgroundRepeat: "no-repeat",

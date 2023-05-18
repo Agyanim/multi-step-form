@@ -45,9 +45,9 @@ const CardList = ({ sent }) => {
     );
   });
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-col lg:flex-row gap-4">
       <form action="" onSubmit={submitHandler}>
-        <section className="flex gap-4">{rederCard}</section>
+        <section className="flex flex-col lg:flex-row gap-4">{rederCard}</section>
         <div className="w-[100%] h-10  mt-5 ">
           <section className="flex w-[100%] bg-LightGray/40 justify-center p-2 rounded h-[100%]">
             <span

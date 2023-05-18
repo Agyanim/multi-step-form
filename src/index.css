@@ -22,4 +22,9 @@ background-color: aqua;
 .step{
     @apply  text-white/50 
 }
+
+input[type="text"]{
+    @apply lg:w-[90%] p-2 border-2 rounded-md border-CoolGray
+}
+
 }

@@ -5,12 +5,12 @@ import "../css/globalLayout.css";
 
 const GlobalLayout = () => {
   return (
-    <div className="backgroun flex  items-center w-[100%] bg-LightGray justify-center h-screen">
-      <section className="container flex  bg-white rounded-md my-4 w-[60%] h-[75%]">
-        <div className="hidden  lg:flex w-[30%] bg-PurplishBblue  rounded-md m-4">
+    <div className="flex items-center lg:min-h-[100vh] lg:min-w-[100vw] bg-LightGray justify-center">
+      <section className="flex flex-col lg:flex-row justify-between bg-white rounded-md my-4 lg:max-w-[70%] lg:w-[70%] lg:h-[80%] xl:max-w-[60%] xl:h-[80%]">
+        <div className="">
           <Navbar />
         </div>
-        <div className="w-[60%] border-2 border-red-200 m-4 ">
+        <div className="border border-red-600 lg:w-[60%] xl:w-[66%] ">
           <Outlet />
         </div>
       </section>

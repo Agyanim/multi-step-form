@@ -45,18 +45,18 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center font-ubuntu w-[41.5vw] -ml-10">
-      <header className="mt-8">
-        <h1 className="text-3xl text-MarineBlue font-ubuntu font-extrabold">
+    <div className="flex flex-col  font-ubuntu lg:w-[100%] ">
+      <header className="mt-8 ">
+        <h1 className="lg:text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
           Personal info
         </h1>
-        <p className="text-CoolGray">
+        <p className="text-CoolGray lg:text-sm xl:text-lg">
           Please provide your name, email address, and phone number.
         </p>
       </header>
-      <div className="flex justify-start items-start mt-4 w-[32vw]">
+      <div className="flex justify-start items-start mt-4 w-[100%] relative">
         <form
-          className=""
+          className="w-[100%] "
           action="#"
           method="post"
           onSubmit={handleSubmit(nextStepHandler)}
@@ -74,7 +74,7 @@ const Home = () => {
             <br />
             <input
               className={classNames(
-                "w-[32vw] p-2 border-2 rounded-md border-CoolGray mt-[-4rem]",
+                " mt-[-4rem]",
                 { "border-2 border-red-400": errors?.name }
               )}
               type="text"
@@ -98,7 +98,7 @@ const Home = () => {
             <br />
             <input
               className={classNames(
-                "w-[32vw] p-2 border-2 rounded-md border-CoolGray",
+                "",
                 {
                   "border-2 border-red-400": errors?.email_address,
                 }
@@ -124,7 +124,7 @@ const Home = () => {
             <br />
             <input
               className={classNames(
-                "w-[32vw] p-2 border-2 rounded-md border-CoolGray mt-2",
+                " mt-2",
                 { "border-2 border-red-400": errors?.phone_number }
               )}
               type="text"
@@ -135,7 +135,7 @@ const Home = () => {
               placeholder="e.g. +1 234 567 890"
             />
           </div>
-          <div className="relative w-[100%] top-12">
+          <div className="absolute w-[100%] lg:top-[20rem] xl:top-[19rem]  lg:left-[65%] xl:left-[72%]">
             <PrimaryButton />
           </div>
         </form>
