@@ -38,7 +38,6 @@ const CardList = ({ sent }) => {
           Plan={detail.plan}
           Price={detail.price}
           Image={image[0]}
-          sent={sent}
           id={detail.id}
         />
       </div>
@@ -46,8 +45,8 @@ const CardList = ({ sent }) => {
   });
   return (
     <div className="flex flex-col lg:flex-row gap-4">
-      <form action="" onSubmit={submitHandler}>
-        <section className="flex flex-col lg:flex-row gap-4">{rederCard}</section>
+      <form  onSubmit={submitHandler}>
+        <section className="flex flex-col lg:flex-row gap-10">{rederCard}</section>
         <div className="w-[100%] h-10  mt-5 ">
           <section className="flex w-[100%] bg-LightGray/40 justify-center p-2 rounded h-[100%]">
             <span
@@ -68,7 +67,7 @@ const CardList = ({ sent }) => {
           </section>
         </div>
         <div className="relative  top-16">
-          <div>
+          <div className="absolute w-[100%] left-[80%]">
             <PrimaryButton />
           </div>
           <div className="" onClick={goBackHandler}>

@@ -45,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col  font-ubuntu lg:w-[100%] ">
+    <div className="flex flex-col  font-ubuntu lg:w-[100%] xl:ml-5 ">
       <header className="mt-8 ">
         <h1 className="lg:text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
           Personal info

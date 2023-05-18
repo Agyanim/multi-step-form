@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Ubuntu:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,7 +26,7 @@ background-color: aqua;
 }
 
 input[type="text"]{
-    @apply lg:w-[90%] p-2 border-2 rounded-md border-CoolGray
+    @apply lg:w-[90%] xl:w-[82%] p-2 border-2 rounded-md border-CoolGray
 }
 
 }
