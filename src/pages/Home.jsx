@@ -45,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <section className="flex bg-transparent rounded-md lg:rounded-none w-[76%] m-auto">
+    <section className="flex bg-transparent rounded-md lg:rounded-none w-[80.5%] m-auto">
     <div className="flex flex-col  font-ubuntu lg:w-[100%] lg:ml-[-1rem] xl:ml-[-1rem]">
       <header className="mt-8 ">
         <h1 className="text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
@@ -125,7 +125,7 @@ const Home = () => {
             <br />
             <input
               className={classNames(
-                " mt-2 mb-[2rem] lg:mb-0",
+                " mt-2 mb-[2.5rem] lg:mb-0",
                 { "border-2 border-red-400": errors?.phone_number }
               )}
               type="text"

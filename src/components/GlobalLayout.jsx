@@ -10,7 +10,7 @@ const GlobalLayout = () => {
         <div className="">
           <Navbar />
         </div>
-        <div className="border-none  lg:w-[65%] xl:w-[70%] mt-[-22%] bg-white rounded-lg lg:rounded-none lg:mt-0 w-[90%] m-auto lg:m-0">
+        <div className="border-none  lg:w-[65%] xl:w-[70%] mt-[-22%] bg-white rounded-lg lg:rounded-none lg:mt-0 w-[85%] m-auto lg:m-0">
           <Outlet />
         </div>
       </section>
