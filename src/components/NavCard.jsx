@@ -38,7 +38,7 @@ const NavCard = () => {
   }, [selector]);
 
   return (
-    <section className="flex flex-col gap-4 mt-5 ml-5">
+    <section className="flex justify-center lg:justify-start pt-[2rem] lg:flex-col gap-4 lg:mt-5 lg:ml-5">
       <div>
         <label htmlFor="11" className="flex">
           <span
@@ -50,7 +50,7 @@ const NavCard = () => {
           >
             {selectorDetails[0].id}
           </span>
-          <div className=" ml-[2rem] flex flex-col ">
+          <div className="hidden lg:flex ml-[2rem]  flex-col ">
             <span className="step"> {selectorDetails[0].step}</span>
             <span className="link"> {selectorDetails[0].link}</span>
           </div>
@@ -71,7 +71,7 @@ const NavCard = () => {
           >
             {selectorDetails[1].id}
           </span>
-          <div className=" ml-[2rem] flex flex-col ">
+          <div className=" hidden lg:flex ml-[2rem]  flex-col ">
             <span className="step"> {selectorDetails[1].step}</span>
             <span className="link"> {selectorDetails[1].link}</span>
           </div>
@@ -92,7 +92,7 @@ const NavCard = () => {
           >
             {selectorDetails[2].id}
           </span>
-          <div className=" ml-[2rem] flex flex-col ">
+          <div className=" hidden lg:flex ml-[2rem]  flex-col ">
             <span className="step"> {selectorDetails[2].step}</span>
             <span className="link"> {selectorDetails[2].link}</span>
           </div>
@@ -113,7 +113,7 @@ const NavCard = () => {
           >
             {selectorDetails[3].id}
           </span>
-          <div className=" ml-[2rem] flex flex-col ">
+          <div className=" hidden lg:flex ml-[2rem]  flex-col ">
             <span className="step"> {selectorDetails[3].step}</span>
             <span className="link"> {selectorDetails[3].link}</span>
           </div>

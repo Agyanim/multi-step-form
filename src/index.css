@@ -4,6 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Nav background image */
+.nav_background{
+    background-image: url("/public/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (min-width:1024px) {
+    .nav_background{
+        background-image: url("/public/bg-sidebar-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+}
+
+
 input[type="radio"]{
     appearance: none;
 
@@ -26,7 +43,7 @@ background-color: aqua;
 }
 
 input[type="text"]{
-    @apply lg:w-[90%] xl:w-[82%] p-2 border-2 rounded-md border-CoolGray
+    @apply lg:w-[98%] xl:w-[95%] p-1 lg:p-2 border-2 rounded-md border-CoolGray
 }
 
 }

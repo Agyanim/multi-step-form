@@ -45,9 +45,10 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col  font-ubuntu lg:w-[100%] xl:ml-5 ">
+    <section className="flex bg-transparent rounded-md lg:rounded-none w-[80%] m-auto">
+    <div className="flex flex-col  font-ubuntu lg:w-[100%] lg:ml-[-1rem] xl:ml-[-1rem]">
       <header className="mt-8 ">
-        <h1 className="lg:text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
+        <h1 className="text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
           Personal info
         </h1>
         <p className="text-CoolGray lg:text-sm xl:text-lg">
@@ -63,11 +64,11 @@ const Home = () => {
         >
           <div>
             <label
-              className=" text-MarineBlue flex relative mb-[-12px]"
+              className=" text-MarineBlue flex relative mb-[-12px] text-sm lg:text-base"
               htmlFor="name"
             >
               Name
-              <span className="absolute right-0 text-red-500">
+              <span className="absolute right-0 text-red-500 ">
                 {errors?.name?.message}
               </span>
             </label>
@@ -85,16 +86,16 @@ const Home = () => {
               placeholder="e.g. Stephen King"
             />
           </div>
-          <div className="mt-4">
-            <label
-              className=" text-MarineBlue relative flex mb-[-22px]"
+          <div className="mt-2">
+            <lab text-sm lg:text-baseel
+              className=" text-MarineBlue relative flex mb-[-22px] text-sm lg:text-base"
               htmlFor="email_address"
             >
-              Email Address{" "}
+              Email Address
               <span className="absolute  text-red-500 right-0">
                 {errors?.email_address?.message}
               </span>
-            </label>
+            </lab>
             <br />
             <input
               className={classNames(
@@ -111,9 +112,9 @@ const Home = () => {
               placeholder="e.g. stephenking@lorem.com"
             />
           </div>
-          <div className="mt-4">
+          <div className="mt-2">
             <label
-              className="  text-MarineBlue flex relative mb-[-30px]"
+              className="  text-MarineBlue flex relative mb-[-30px] text-sm lg:text-base"
               htmlFor=""
             >
               Phone Number
@@ -124,7 +125,7 @@ const Home = () => {
             <br />
             <input
               className={classNames(
-                " mt-2",
+                " mt-2 mb-[2rem] lg:mb-0",
                 { "border-2 border-red-400": errors?.phone_number }
               )}
               type="text"
@@ -135,12 +136,13 @@ const Home = () => {
               placeholder="e.g. +1 234 567 890"
             />
           </div>
-          <div className="absolute w-[100%] lg:top-[20rem] xl:top-[19rem]  lg:left-[65%] xl:left-[72%]">
+          <div className="absolute w-[40%] top-[20.5rem] left-[72%] lg:top-[18rem] xl:top-[17rem] lg:left-[72%] xl:left-[75%]">
             <PrimaryButton />
           </div>
         </form>
       </div>
     </div>
+    </section>
   );
 };
 

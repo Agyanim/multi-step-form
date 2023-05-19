@@ -41,8 +41,8 @@ const linkHandler=()=>{
     );
   });
   return (
-    <div className="w-[94%]">
-      <ul className="bg-LightGray/40 w-[80%] m-auto p-4 rounded-md">
+    <div className="lg:w-[100%]">
+      <ul className="bg-LightGray/40 w-[80%] p-4 rounded-md">
         <li className="text-MarineBlue font-bold">
           <span className="flex justify-between items-center  mb-1">
             {selectedService?.plan} {isYearly ? "(Yearly)" : "(Monthly)"}{" "}
@@ -51,7 +51,7 @@ const linkHandler=()=>{
               {isYearly ? "/yr" : "/mo"}
             </span>
           </span>
-          <span className=" text-CoolGray font-light cursor-pointer underline">
+          <span className=" text-PurplishBblue font-light cursor-pointer underline">
             <Link to="/selectplan" onClick={linkHandler}>Change</Link>
             
           </span>
@@ -60,9 +60,9 @@ const linkHandler=()=>{
         {renderSelectedAddOns}
       </ul>
       <div>
-        <h1 className="flex justify-between mx-16 mt-6 text-CoolGray ">
-          Total{isYearly ? " (Per year)" : "( per month)"}{" "}
-          <span className="text-PurplishBblue font-bold text-lg">
+        <h1 className="flex justify-between mt-6 text-CoolGray ">
+          Total{isYearly ? " (Per year)" : "( per month)"}
+          <span className="text-PurplishBblue text-lg mr-[25%]">
             +${payable}
             {isYearly ? "/yr" : "/mo"}
           </span>
