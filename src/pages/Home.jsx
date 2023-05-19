@@ -45,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <section className="flex bg-transparent rounded-md lg:rounded-none w-[80.5%] m-auto">
+    <section className="flex bg-transparent rounded-md lg:rounded-none w-[81%] m-auto">
     <div className="flex flex-col  font-ubuntu lg:w-[100%] lg:ml-[-1rem] xl:ml-[-1rem]">
       <header className="mt-8 ">
         <h1 className="text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
