@@ -136,7 +136,7 @@ const Home = () => {
               placeholder="e.g. +1 234 567 890"
             />
           </div>
-          <div className="absolute w-[45%] top-[24rem] left-[72%] lg:top-[18rem] xl:top-[17rem] lg:left-[72%] xl:left-[75%]">
+          <div className="absolute w-[45%] top-[25rem] left-[72%] lg:top-[18rem] xl:top-[17rem] lg:left-[72%] xl:left-[75%]">
             <PrimaryButton />
           </div>
         </form>
