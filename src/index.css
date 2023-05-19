@@ -43,7 +43,7 @@ background-color: aqua;
 }
 
 input[type="text"]{
-    @apply lg:w-[98%] xl:w-[95%] p-1 lg:p-2 border-2 rounded-md border-CoolGray
+    @apply lg:w-[98%] xl:w-[95%] p-1 lg:p-2 border rounded border-CoolGray
 }
 
 }

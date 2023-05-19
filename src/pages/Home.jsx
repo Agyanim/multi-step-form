@@ -45,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <section className="flex bg-transparent rounded-md lg:rounded-none w-[80%] m-auto">
+    <section className="flex bg-transparent rounded-md lg:rounded-none w-[76%] m-auto">
     <div className="flex flex-col  font-ubuntu lg:w-[100%] lg:ml-[-1rem] xl:ml-[-1rem]">
       <header className="mt-8 ">
         <h1 className="text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
@@ -136,7 +136,7 @@ const Home = () => {
               placeholder="e.g. +1 234 567 890"
             />
           </div>
-          <div className="absolute w-[40%] top-[20.5rem] left-[72%] lg:top-[18rem] xl:top-[17rem] lg:left-[72%] xl:left-[75%]">
+          <div className="absolute w-[45%] top-[24rem] left-[72%] lg:top-[18rem] xl:top-[17rem] lg:left-[72%] xl:left-[75%]">
             <PrimaryButton />
           </div>
         </form>
