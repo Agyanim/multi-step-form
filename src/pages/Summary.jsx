@@ -18,7 +18,8 @@ const Summary = () => {
     navigate("/thanks");
   };
   return (
-    <div className="w-[100%] lg:ml-[6%] xl:ml-[2.5%]">
+    <section className="flex w-[90%] mx-auto  lg:mx-0 mb-10 lg:mb-0 ">
+    <div className="w-[100%] lg:ml-[6%] xl:ml-[2%]">
       <header className="mt-8  mb-4">
         <h1 className="text-3xl text-MarineBlue font-ubuntu font-extrabold">
           Finishing up
@@ -30,12 +31,12 @@ const Summary = () => {
       <section className="relative">
         <form  onSubmit={submitHandler}>
           <FinishingUp />
-          <div className="relative  top-5 w-[100%] ">
-            <div className="absolute w-[100%] top-[7.5rem] lg:left-[58%] xl:left-[63%]">
+          <div className="absolute  top-[24rem] lg:top-[18rem]  w-[100%] ">
+            <div className="absolute w-[50%] left-[60%] lg:left-[58%] xl:left-[63%]">
               <PrimaryButton />
             </div>
             <div
-              className=" absolute w-[100%] top-[7rem]"
+              className=" absolute w-[100%] "
               onClick={goBackHandler}
             >
               <SecondaryButton />
@@ -44,6 +45,7 @@ const Summary = () => {
         </form>
       </section>
     </div>
+    </section>
   );
 };
 

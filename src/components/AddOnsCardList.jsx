@@ -86,13 +86,13 @@ const AddOnsCardList = () => {
     );
   });
   return (
-    <div className="flex flex-col gap-4 w-[100%] ">
+    <div className="flex flex-col gap-4 w-[100%] relative">
       <form className="w-[100%]" onSubmit={submitHandler} >
         <section ref={checkRef} className="flex flex-col gap-4 ">
           {renderCard}
         </section>
-        <section className="relative  mt-10">
-          <div className="absolute w-[100%] lg:left-[56%]  xl:left-[67%]">
+        <section className="absolute w-[95%] lg:w-[100] top-[25rem] lg:top-10">
+          <div className="absolute w-[80%]  left-[70%] lg:left-[56%]  xl:left-[67%]">
             <PrimaryButton />
           </div>
           <div onClick={goBackHandler}>

@@ -3,6 +3,7 @@ import AddOnsCardList from "../components/AddOnsCardList";
 
 const AddOns = () => {
   return (
+    <section className="flex w-[90%] mx-auto mb-10">
     <div className="lg:ml-[10%] xl:ml-[2%]">
       <header className="mt-8 mb-4">
         <h1 className=" lg:text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
@@ -16,6 +17,7 @@ const AddOns = () => {
         <AddOnsCardList />
       </section>
     </div>
+    </section>
   );
 };
 

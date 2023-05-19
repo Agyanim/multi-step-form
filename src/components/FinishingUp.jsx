@@ -42,7 +42,7 @@ const linkHandler=()=>{
   });
   return (
     <div className="lg:w-[100%]">
-      <ul className="bg-LightGray/40 w-[80%] p-4 rounded-md">
+      <ul className="bg-LightGray/40 w-[100%] p-4 rounded-md">
         <li className="text-MarineBlue font-bold">
           <span className="flex justify-between items-center  mb-1">
             {selectedService?.plan} {isYearly ? "(Yearly)" : "(Monthly)"}{" "}

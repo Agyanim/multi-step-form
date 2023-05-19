@@ -19,10 +19,10 @@ const AddOnsCard = ({ Service, Package, Cost, id, Addon }) => {
         />
         <div className="">
           <h1 className="text-MarineBlue font-bold">{Service}</h1>
-          <p className="text-CoolGray">{Package}</p>
+          <p className="text-CoolGray text-xs lg:text-base">{Package}</p>
         </div>
       </section>
-      <p className="text-PurplishBblue">
+      <p className="text-PurplishBblue text-xs lg:text-base">
         +${Cost} {isYearly ? "/yr" : "/m"}
       </p>
     </label>
