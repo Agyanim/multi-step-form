@@ -7,10 +7,10 @@ const Plancard = ({ Plan, Price, Image,id }) => {
 
   return (
     <div
-      className="flex justify-center items-center lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 relative border-[1px] border-LightGray p-4 rounded cursor-pointer transform duration-200 hover:scale-105  overflow-hidden"
+      className="flex  justify-center items-center w-[18rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 relative border-[1px] border-LightGray p-4 rounded cursor-pointer transform duration-200 hover:scale-105  overflow-hidden"
     >
       <label
-        className="flex flex-col gap-10  w-36 h-40 absolute "
+        className="flex flex-col gap-10  w-[18rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 absolute  "
         htmlFor="selectAddOns"
       >
         <input
@@ -21,7 +21,8 @@ const Plancard = ({ Plan, Price, Image,id }) => {
           required
           id={id}
         />
-        <section className=" flex flex-col gap-10 m-4">
+        {/* Items and icons for selecting plans */}
+        <section className=" flex flex-row lg:flex-col gap-5 lg:gap-10 m-4">
           <div>
             <img src={Image} alt="image" />
           </div>

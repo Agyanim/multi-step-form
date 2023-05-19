@@ -13,7 +13,8 @@ const Toggle = () => {
 
   };
   return (
-    <div className="flex justify-center items-center w-1/6 cursor-pointer group">
+
+    <div className="flex justify-center items-center w-1/6 cursor-pointer group ">
       <div
         onClick={toggleHandler}
         className={classNames(
@@ -23,11 +24,12 @@ const Toggle = () => {
         <span
           className={classNames(
             "w-8 h-8 bg-white absolute rounded-full tranform duration-200 ease-out scale-[70%] group-hover:scale-[101%]",
-            { " translate-x-8 ": isYearly }
+            { " lg:translate-x-8 translate-x-5  ": isYearly }
           )}
         />
       </div>
     </div>
+
   );
 };
 

@@ -46,9 +46,9 @@ const CardList = ({ sent }) => {
   return (
     <div className="flex flex-col lg:flex-row gap-4">
       <form  onSubmit={submitHandler}>
-        <section className="flex flex-col lg:flex-row gap-10">{rederCard}</section>
-        <div className="w-[100%] h-10  mt-5 ">
-          <section className="flex w-[100%] bg-LightGray/40 justify-center p-2 rounded h-[100%]">
+        <section className="flex flex-col lg:flex-row gap-2 lg:gap-10">{rederCard}</section>
+        <div className="w-[100%] h-10  mt-5 mb-5 lg:mb-0">
+          <section className="flex w-[100%] bg-LightGray/40 justify-center p-2 rounded h-[100%] ">
             <span
               className={classNames("mr-2 text-MarineBlue font-bold", {
                 "text-CoolGray font-thin": isYearly,
@@ -56,6 +56,7 @@ const CardList = ({ sent }) => {
             >
               Monthly
             </span>
+
             <Toggle />
             <span
               className={classNames("ml-2 text-CoolGray", {
@@ -67,7 +68,7 @@ const CardList = ({ sent }) => {
           </section>
         </div>
         <div className="relative  top-16">
-          <div className="absolute w-[100%] left-[80%]">
+          <div className="absolute w-[50%] left-[65%] lg:left-[80%]">
             <PrimaryButton />
           </div>
           <div className="" onClick={goBackHandler}>
