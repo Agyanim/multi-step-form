@@ -7,7 +7,7 @@ const Plancard = ({ Plan, Price, Image,id }) => {
 
   return (
     <div
-      className="flex  justify-center items-center w-[18rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 relative border-[1px] border-LightGray p-4 rounded cursor-pointer transform duration-200 hover:scale-105  overflow-hidden"
+      className="flex  justify-center items-center w-[16.5rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 relative border-[1px] border-LightGray p-4 rounded cursor-pointer transform duration-200 hover:scale-105  overflow-hidden"
     >
       <label
         className="flex flex-col gap-10  w-[18rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 absolute  "
