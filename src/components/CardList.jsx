@@ -67,7 +67,7 @@ const CardList = ({ sent }) => {
             </span>
           </section>
         </div>
-        <div className="relative  top-16">
+        <div className="relative  top-16 ">
           <div className="absolute w-[50%] left-[65%] lg:left-[80%]">
             <PrimaryButton />
           </div>

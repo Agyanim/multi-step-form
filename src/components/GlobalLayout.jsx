@@ -6,7 +6,7 @@ import "../css/globalLayout.css";
 const GlobalLayout = () => {
   return (
     <div className="flex items-center lg:min-h-[100vh] lg:min-w-[100vw] lg:w-[100vw] bg-LightGray justify-center">
-      <section className="flex flex-col lg:flex-row  lg:justify-between bg-LightGray lg:bg-white h-[80vh]  lg:my-4 lg:max-w-[80%] lg:w-[75%] lg:h-[80%] xl:w-[65%] xl:h-[80%]">
+      <section className="flex flex-col lg:flex-row  lg:justify-between bg-LightGray lg:bg-white h-[100vh]  lg:my-4 lg:max-w-[80%] lg:w-[75%] lg:h-[80%] xl:w-[65%] xl:h-[80%]">
         <div className="">
           <Navbar />
         </div>
