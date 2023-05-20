@@ -91,8 +91,8 @@ const AddOnsCardList = () => {
         <section ref={checkRef} className="flex flex-col gap-4 ">
           {renderCard}
         </section>
-        <section className="absolute w-[95%] lg:w-[100%] top-[25rem] lg:top-[20rem]">
-          <div className="absolute w-[80%] left-[65%] lg:left-[56%]  xl:left-[67%]">
+        <section className="absolute w-[95%] lg:w-[100%] top-[53vh] lg:top-[20rem]">
+          <div className="absolute w-[50%] left-[65%] lg:left-[56%]  xl:left-[67%]">
             <PrimaryButton />
           </div>
           <div onClick={goBackHandler}>
