@@ -7,7 +7,7 @@ const AddOnsCard = ({ Service, Package, Cost, id, Addon }) => {
   return (
     <label
       htmlFor={id}
-      className="flex justify-between items-center border-[1px] border-PurplishBblue lg:w-[80%] xl:w-[85%] p-4 rounded-md cursor-pointer text-sm font-ubuntu"
+      className="flex justify-between items-center border-[1px] border-PurplishBblue lg:w-[85%] xl:w-[90%] p-4 rounded-md cursor-pointer text-sm font-ubuntu"
     >
       <section className="flex justify-center items-center gap-4">
         <input
