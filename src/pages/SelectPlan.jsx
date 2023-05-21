@@ -3,7 +3,7 @@ import CardList from "../components/CardList";
 
 const SelectPlan = () => {
   return (
-    <section className="flex w-[90%] lg:ml-[-0.2rem] xl:ml-[2.5rem] m-auto">
+    <main className="flex w-[90%] lg:ml-[-0.2rem] xl:ml-[2.5rem] m-auto">
     <div className="flex  flex-col ">
       <header className="mt-8 ">
         <h1 className="text-2xl xl:text-3xl text-MarineBlue font-ubuntu font-extrabold">
@@ -13,11 +13,9 @@ const SelectPlan = () => {
           You have the option of monthly or yearly billing.
         </p>
       </header>
-      <div className="">
         <CardList />
-      </div>
     </div>
-    </section>
+    </main>
   );
 };
 

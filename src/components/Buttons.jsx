@@ -1,5 +1,5 @@
 import React from "react";
-
+// primary button
 const PrimaryButton = () => {
   return (
       <button
@@ -13,6 +13,8 @@ const PrimaryButton = () => {
 
 export default PrimaryButton;
 
+
+// secondary button
 export const SecondaryButton = () => {
   return (
       <button className="absolute  -ml-4 mt-2 px-4 py-2 rounded-md  text-CoolGray font-ubuntu">

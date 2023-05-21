@@ -6,24 +6,27 @@ const FinishingUp = () => {
   const selectedService = useSelector(
     (store) => store.service.value.selectedService
   );
+  // getting variabls from redux store
   const isYearly = useSelector((store) => store.service.value.isYearly);
   const selectedAddOns = useSelector(
     (store) => store.addOns.value.searchResult
   );
 
-  let price = 0;
+  let price = 0; // this variable was used for the year subscription calculations
   let unitPrice = 0;
   let newprice = 0;
-  let totalCost = 0;
+  let totalCost = 0; //this holds the total cost to be display on the summary page
+
+  // summing up the selected addOns
   const sumOfSlectedAddOns = selectedAddOns.reduce(
     (prev, currentValue) => prev + currentValue.cost,
     0
   );
+  // this was used to subtract the 2 month free for the year subscribers
   if (isYearly && selectedService) {
     unitPrice = selectedService.price / 12;
     newprice = unitPrice * 10;
   }
-  console.log(newprice);
   if (isYearly && selectedService) {
     price = newprice;
     totalCost = sumOfSlectedAddOns + price;
@@ -32,7 +35,8 @@ const FinishingUp = () => {
     totalCost = sumOfSlectedAddOns + price;
   }
 
-  console.log(totalCost);
+
+  // getting the final total to display on the summary page
   let payable = 0;
   if (!totalCost) {
     payable = 0;

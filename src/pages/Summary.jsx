@@ -14,7 +14,7 @@ const Summary = () => {
     navigate("/thanks");
   };
   return (
-    <section className="flex w-[90%] mx-auto  lg:mx-0 mb-10 lg:mb-0 ">
+    <main className="flex w-[90%] mx-auto  lg:mx-0 mb-10 lg:mb-0 ">
     <div className="w-[100%] lg:ml-[2%] xl:ml-[2%]">
       <header className="mt-8  mb-4">
         <h1 className="text-3xl text-MarineBlue font-ubuntu font-extrabold">
@@ -41,7 +41,7 @@ const Summary = () => {
         </form>
       </section>
     </div>
-    </section>
+    </main>
   );
 };
 

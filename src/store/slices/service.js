@@ -14,7 +14,9 @@ const serviceSlice = createSlice({
   },
   reducers: {
     toggleMonthly: (state) => {
-      state.value.isYearly = !state.value.isYearly;
+      state.value.isYearly = !state.value.isYearly;// toggle handler for the yearly and monthly subscription
+
+// getting payload from slectPlan page (Id) to update or modify the selected plan
       let newUpdate = "";
       if (state.value.isYearly) {
         newUpdate = state.value.onlineService.map(
@@ -39,7 +41,7 @@ const serviceSlice = createSlice({
         );
       state.value.onlineService = newUpdate;
     },
-
+// getting selected service from the addOns page
     getSelectedService: (state, action) => {
       const id = action.payload;
       let onlineService = state.value.onlineService;

@@ -42,7 +42,7 @@ const CardList = () => {
     );
   });
   return (
-    <div className="flex flex-col lg:flex-row gap-4">
+    <section className="flex flex-col lg:flex-row gap-4">
       <form  onSubmit={submitHandler}>
         <section className="flex flex-col lg:flex-row gap-2 lg:gap-10">{rederCard}</section>
         <div className="w-[100%] h-10  mt-5 mb-5 lg:mb-0">
@@ -74,7 +74,7 @@ const CardList = () => {
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 
