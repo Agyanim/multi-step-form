@@ -4,7 +4,7 @@ const PrimaryButton = () => {
   return (
       <button
         type="submit"
-        className="absolute  px-4 py-2 rounded-md bg-MarineBlue text-white font-ubuntu"
+        className="absolute  px-4 py-2 rounded-md bg-MarineBlue text-white font-ubuntu hover:bg-PurplishBblue/80"
       >
         Next Step
       </button>

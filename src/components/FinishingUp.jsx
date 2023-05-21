@@ -1,10 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { setSelector } from "../store/slices/service";
 
 const FinishingUp = () => {
-  const dispatch=useDispatch()
   const selectedService = useSelector(
     (store) => store.service.value.selectedService
   );
@@ -24,9 +22,7 @@ const FinishingUp = () => {
   if (!totalCost) {
     payable = 0;
   } else payable = totalCost;
-const linkHandler=()=>{
-  {dispatch(setSelector(12))}
-}
+
   const renderSelectedAddOns = selectedAddOns?.map((value) => {
     return (
       <ul key={value.id}>
@@ -51,8 +47,8 @@ const linkHandler=()=>{
               {isYearly ? "/yr" : "/mo"}
             </span>
           </span>
-          <span className=" text-PurplishBblue font-light cursor-pointer underline">
-            <Link to="/selectplan" onClick={linkHandler}>Change</Link>
+          <span className=" text-PurplishBblue/70 font-bold cursor-pointer underline">
+            <Link to="/selectplan" >Change</Link>
             
           </span>
         </li>
@@ -62,7 +58,7 @@ const linkHandler=()=>{
       <div>
         <h1 className="flex justify-between mt-6 text-CoolGray ">
           Total{isYearly ? " (Per year)" : "( per month)"}
-          <span className="text-PurplishBblue text-lg mr-[25%]">
+          <span className="text-PurplishBblue text-lg mr-[25%] lg:mr-[1.5%] font-bold">
             +${payable}
             {isYearly ? "/yr" : "/mo"}
           </span>

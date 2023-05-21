@@ -4,7 +4,6 @@ import PrimaryButton, { SecondaryButton } from "./Buttons";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedAddOns } from "../store/slices/addOns";
-import { setSelector } from "../store/slices/service";
 
 const AddOnsCardList = () => {
   const navigate = useNavigate();
@@ -14,7 +13,6 @@ const AddOnsCardList = () => {
   );
 
   const dispatch = useDispatch();
-  // const [selectAddOns, setSelectAddOns] = useState([]);
   const [OnlineService, setOnlineService] = useState([]);
   const [largerStorage, setlargerStorage] = useState([]);
   const [customizableProfile, setcustomizableProfile] = useState([]);
@@ -64,12 +62,10 @@ const AddOnsCardList = () => {
 
     dispatch(selectedAddOns(addItem))
     navigate("/summary");
-    dispatch(setSelector(14))
   };
 
   const goBackHandler = () => {
     navigate("/selectplan");
-    dispatch(setSelector(12))
   };
 
   const renderCard = addOnsServices.map((card) => {
@@ -86,13 +82,13 @@ const AddOnsCardList = () => {
     );
   });
   return (
-    <div className="flex flex-col gap-4 w-[100%] relative">
+    <section className="flex flex-col gap-4 w-[100%] relative">
       <form className="w-[100%] " onSubmit={submitHandler} >
         <section ref={checkRef} className="flex flex-col gap-4 ">
           {renderCard}
         </section>
-        <section className="absolute w-[95%] lg:w-[100%] top-[53vh] lg:top-[20rem]">
-          <div className="absolute w-[50%] left-[65%] lg:left-[56%]  xl:left-[67%]">
+        <section className="absolute w-[95%] lg:w-[100%] top-[53vh] lg:top-[19rem]">
+          <div className="absolute w-[50%] left-[65%] lg:left-[60%]  xl:left-[70%]">
             <PrimaryButton />
           </div>
           <div onClick={goBackHandler}>
@@ -100,7 +96,7 @@ const AddOnsCardList = () => {
           </div>
         </section>
       </form>
-    </div>
+    </section>
   );
 };
 

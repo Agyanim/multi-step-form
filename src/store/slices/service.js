@@ -10,7 +10,6 @@ const serviceSlice = createSlice({
       onlineService,
       isYearly: false,
       selectedService: {},
-      selector: 11,
     },
   },
   reducers: {
@@ -48,10 +47,7 @@ const serviceSlice = createSlice({
       state.value.selectedService = findService;
     },
 
-    setSelector: (state, action) => {
-      state.value.selector = action.payload;
-    },
   },
 });
-export const { toggleMonthly, getSelectedService,setSelector } = serviceSlice.actions;
+export const { toggleMonthly, getSelectedService } = serviceSlice.actions;
 export default serviceSlice.reducer;

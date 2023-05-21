@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
-const AddOnsCard = ({ Service, Package, Cost, id, Addon }) => {
+const AddOnsCard = ({ Service, Package, Cost, id }) => {
   const isYearly = useSelector((store) => store.addOns.value.isYearly);
-  
+
   return (
     <label
       htmlFor={id}
@@ -12,7 +12,7 @@ const AddOnsCard = ({ Service, Package, Cost, id, Addon }) => {
       <section className="flex justify-center items-center gap-4">
         <input
           id={id}
-          className="text-red-400"
+          className="text-red-400 accent-PurplishBblue"
           type="checkbox"
           name={Service}
           value={id}

@@ -7,7 +7,6 @@ import schema from "../utils/formValidation";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addPersonalInfo } from "../store/slices/personalIfoSlice";
-import { setSelector } from "../store/slices/service";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,7 +40,6 @@ const Home = () => {
       })
     );
     navigate("/selectplan");
-    dispatch(setSelector(12))
   };
 
   return (
@@ -58,8 +56,6 @@ const Home = () => {
       <div className="flex justify-start items-start mt-4 w-[100%] relative">
         <form
           className="w-[100%] "
-          action="#"
-          method="post"
           onSubmit={handleSubmit(nextStepHandler)}
         >
           <div>
@@ -87,7 +83,7 @@ const Home = () => {
             />
           </div>
           <div className="mt-2">
-            <lab text-sm lg:text-baseel
+            <label 
               className=" text-MarineBlue relative flex mb-[-22px] text-sm lg:text-base"
               htmlFor="email_address"
             >
@@ -95,11 +91,10 @@ const Home = () => {
               <span className="absolute  text-red-500 right-0">
                 {errors?.email_address?.message}
               </span>
-            </lab>
+            </label>
             <br />
             <input
               className={classNames(
-                "",
                 {
                   "border-2 border-red-400": errors?.email_address,
                 }

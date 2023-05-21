@@ -2,12 +2,12 @@ import classNames from "classnames";
 import React, { useRef  } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getSelectedService, setSelector} from "../store/slices/service";
+import { getSelectedService} from "../store/slices/service";
 import PrimaryButton, { SecondaryButton } from "./Buttons";
 import Plancard from "./Plancard";
 import Toggle from "./Toggle";
 
-const CardList = ({ sent }) => {
+const CardList = () => {
   const isYearly = useSelector((store) => store.service.value.isYearly);
   const dispatch=useDispatch()
   const navigate = useNavigate();
@@ -20,13 +20,11 @@ const CardList = ({ sent }) => {
   };
   const goBackHandler = () => {
     navigate("/");
-    dispatch(setSelector(11))
   };
  const submitHandler=(e)=>{
   e.preventDefault()
   dispatch(getSelectedService(+id) );
    navigate("/addons")
-   dispatch(setSelector(13))
  }
 
 
@@ -68,7 +66,7 @@ const CardList = ({ sent }) => {
           </section>
         </div>
         <div className="relative  top-16 ">
-          <div className="absolute w-[50%] left-[65%] lg:left-[80%]">
+          <div className="absolute w-[50%] left-[65%] lg:left-[78%]">
             <PrimaryButton />
           </div>
           <div className="" onClick={goBackHandler}>
