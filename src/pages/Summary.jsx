@@ -28,7 +28,7 @@ const Summary = () => {
         <form  onSubmit={submitHandler}>
           <FinishingUp />
           <div className="absolute  top-[24rem] lg:top-[18rem]  w-[100%] bg-white">
-            <div className="absolute w-[50%] left-[60%] lg:left-[75%] xl:left-[80%]">
+            <div className="absolute w-[50%] left-[65%] lg:left-[75%] xl:left-[80%]">
               <PrimaryButton />
             </div>
             <div

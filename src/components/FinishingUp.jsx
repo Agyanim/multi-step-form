@@ -58,7 +58,7 @@ const FinishingUp = () => {
       <div>
         <h1 className="flex justify-between mt-6 text-CoolGray ">
           Total{isYearly ? " (Per year)" : "( per month)"}
-          <span className="text-PurplishBblue text-lg mr-[25%] lg:mr-[1.5%] font-bold">
+          <span className="text-PurplishBblue text-lg mr-[4%] lg:mr-[1.5%] font-bold">
             +${payable}
             {isYearly ? "/yr" : "/mo"}
           </span>
