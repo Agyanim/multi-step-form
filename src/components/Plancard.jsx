@@ -4,13 +4,19 @@ import "../App.css";
 
 const Plancard = ({ Plan, Price, Image,id }) => {
   const { isYearly } = useSelector((store) => store.service.value);
-
+let newPrice=0
+let unitPrice=Price/12
+if (isYearly){
+  
+  newPrice=Price-(unitPrice*2)
+}
+else newPrice=Price
   return (
     <div
-      className="flex  justify-center items-center w-[17rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 relative border-[1px] border-LightGray p-4 rounded cursor-pointer transform duration-200 hover:scale-105  overflow-hidden"
+      className="flex  justify-center items-center w-[17rem] h-24 lg:w-[8rem] lg:h-44 xl:w-36  relative border-[1px] border-LightGray p-4 rounded cursor-pointer transform duration-200 hover:scale-105  overflow-hidden"
     >
       <label
-        className="flex flex-col gap-10  w-[18rem] h-20 lg:w-[8rem] lg:h-40 xl:w-36 xl:h-40 absolute  "
+        className="flex flex-col gap-10  w-[18rem] h-24 lg:w-[8rem] lg:h-44 xl:w-36  absolute  "
         htmlFor="selectAddOns"
       >
         <input
@@ -22,16 +28,17 @@ const Plancard = ({ Plan, Price, Image,id }) => {
           id={id}
         />
         {/* Items and icons for selecting plans */}
-        <section className=" flex flex-row lg:flex-col gap-5 lg:gap-10 m-4">
+        <section className=" flex flex-row lg:flex-col gap-5 lg:gap-10 m-4 font-ubuntu">
           <div>
             <img src={Image} alt="image" />
           </div>
           <div>
             <h1 className="text-MarineBlue font-bold ">{Plan}</h1>
             <p className="text-CoolGray font-ubuntu">
-              &#36;{Price}
+              &#36;{newPrice}
               {isYearly ? " /yr" : "/m"}
             </p>
+            <p className={isYearly?"text-MarineBlue":"hidden"}>2 month free</p>
           </div>
         </section>
       </label>

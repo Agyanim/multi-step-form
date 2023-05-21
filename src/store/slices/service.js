@@ -18,12 +18,13 @@ const serviceSlice = createSlice({
       let newUpdate = "";
       if (state.value.isYearly) {
         newUpdate = state.value.onlineService.map(
+
           (service) =>
             (service = {
               id: service.id,
               plan: service.plan,
               image: service.image,
-              price: service.price * 12,
+              price: (service.price * 12),
             })
         );
       } else
@@ -33,7 +34,7 @@ const serviceSlice = createSlice({
               id: service.id,
               plan: service.plan,
               image: service.image,
-              price: service.price / 12,
+              price: (service.price / 12),
             })
         );
       state.value.onlineService = newUpdate;

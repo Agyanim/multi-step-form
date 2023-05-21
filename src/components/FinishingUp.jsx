@@ -1,5 +1,5 @@
 import React from "react";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const FinishingUp = () => {
@@ -12,12 +12,27 @@ const FinishingUp = () => {
   );
 
   let price = 0;
+  let unitPrice = 0;
+  let newprice = 0;
+  let totalCost = 0;
   const sumOfSlectedAddOns = selectedAddOns.reduce(
-    (sum, currentValue) => sum + currentValue.cost,
+    (prev, currentValue) => prev + currentValue.cost,
     0
   );
-  selectedService ? (price = selectedService.price) : price;
-  const totalCost = sumOfSlectedAddOns + price;
+  if (isYearly && selectedService) {
+    unitPrice = selectedService.price / 12;
+    newprice = unitPrice * 10;
+  }
+  console.log(newprice);
+  if (isYearly && selectedService) {
+    price = newprice;
+    totalCost = sumOfSlectedAddOns + price;
+  } else {
+    price = selectedService.price;
+    totalCost = sumOfSlectedAddOns + price;
+  }
+
+  console.log(totalCost);
   let payable = 0;
   if (!totalCost) {
     payable = 0;
@@ -43,13 +58,12 @@ const FinishingUp = () => {
           <span className="flex justify-between items-center  mb-1">
             {selectedService?.plan} {isYearly ? "(Yearly)" : "(Monthly)"}{" "}
             <span>
-              ${selectedService?.price}
+              {isYearly ? price : selectedService?.price}
               {isYearly ? "/yr" : "/mo"}
             </span>
           </span>
           <span className=" text-PurplishBblue/70 font-bold cursor-pointer underline">
-            <Link to="/selectplan" >Change</Link>
-            
+            <Link to="/selectplan">Change</Link>
           </span>
         </li>
         <hr className="h-[1.4px] bg-CoolGray my-4" />
